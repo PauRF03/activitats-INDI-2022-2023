@@ -31,22 +31,21 @@ out vec4 posSnitchDreSCO;
 out vec3 fColor;
 
 
-void main()
-{	
-    fColor = matdiff;
-    matamb_interp  = matamb;
-    matdiff_interp = matdiff;
-    matspec_interp = matspec;
-    matshin_interp = matshin;
+void main() {	
+    	fColor = matdiff;
+    	matamb_interp  = matamb;
+    	matdiff_interp = matdiff;
+    	matspec_interp = matspec;
+    	matshin_interp = matshin;
 
-    mat3 NormalMatrix = transpose(inverse(mat3(view * TG)));
-    normalSCO = NormalMatrix * normal;
-    vertexSCO = view * TG * vec4(vertex, 1.0);
+    	mat3 NormalMatrix = transpose(inverse(mat3(view * TG)));
+    	normalSCO = NormalMatrix * normal;
+    	vertexSCO = view * TG * vec4(vertex, 1.0);
 
-    posSnitchEsqSCO = view * TG * vec4(posSnitchEsq, 1.0);
-    posSnitchDreSCO = view * TG * vec4(posSnitchDre, 1.0);
+    	posSnitchEsqSCO = view * TG * vec4(posSnitchEsq, 1.0);
+    	posSnitchDreSCO = view * TG * vec4(posSnitchDre, 1.0);
 
-    posFocusSCO = inverse(view) * vec4(posFocusSCA, 1);
+    	posFocusSCO = inverse(view) * vec4(posFocusSCA, 1);
 
-    gl_Position = proj *  vertexSCO;
+    	gl_Position = proj *  vertexSCO;
 }
