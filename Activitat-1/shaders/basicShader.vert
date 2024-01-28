@@ -5,7 +5,7 @@ in vec3 color;
 uniform mat4 TG;
 out vec4 fcolor;
 
-void main()  {
-    gl_Position = TG * vec4 (vertex, 1.0);
-    fcolor = vec4(color, 1.f);
+void main() {
+	gl_Position = TG * vec4(vertex, 1.0);
+	fcolor = vec4(color, 1.f);
 }
